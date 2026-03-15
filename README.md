@@ -1,44 +1,66 @@
-# skincare-website
+GlowCare
 
-This template should help get you started developing with Vue 3 in Vite.
+GlowCare е веб апликација за персонализирана нега на кожа која генерира skincare рутини врз основа на тип на кожа и ниво на акни.
 
-## Recommended IDE Setup
+Автор
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Ениса Керим
 
-## Recommended Browser Setup
+Технологии
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+Frontend: Vue.js, Vite, Vue Router, Pinia
 
-## Customize configuration
+Backend: Node.js, Express
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+База: PostgreSQL
 
-## Project Setup
+Главни функционалности
 
-```sh
+Прикажување на козметички производи
+
+Кошничка и омилени производи
+
+SkinRoutine систем за препорака на производи
+
+Web scraping за автоматско собирање на податоци за производи
+
+Backend
+
+GET /api/products – ги враќа сите производи
+
+POST /recommend – генерира skincare рутина според тип на кожа
+
+База на податоци
+
+Табела products содржи:
+
+id
+
+name
+
+price
+
+image
+
+category
+
+skin_type
+
+acne_level
+
+Инсталација
+
+Клонирај го проектот:
+
+git clone https://github.com/EnisaK2004/Skincare-Website.git
+
+Инсталирај dependencies и стартувај:
+
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
-```
 
-### Compile and Minify for Production
+Backend:
 
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+cd src/backend
+npm install
+node server.js
