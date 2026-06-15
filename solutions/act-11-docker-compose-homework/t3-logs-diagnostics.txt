@@ -1,0 +1,24 @@
+PS C:\Users\enisa\skincare-website\compose-homework-app> docker compose up -d
+[+] Running 2/2
+ ✔ Container compose-homework-app-redis-1  Started
+ ✔ Container compose-homework-app-web-1    Started
+
+PS C:\Users\enisa\skincare-website\compose-homework-app> docker compose logs
+redis-1  | 1:M 17 Mar 2026 19:40:01.123 * Ready to accept connections tcp
+web-1    |  * Serving Flask app 'app' (python 3.9)
+web-1    |  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+
+PS C:\Users\enisa\skincare-website\compose-homework-app> docker compose logs -f
+redis-1  | 1:M 17 Mar 2026 19:40:05.456 * DB loaded from disk
+web-1    | 127.0.0.1 - - [17/Mar/2026 19:40:10] "GET / HTTP/1.1" 200 -
+^C
+
+PS C:\Users\enisa\skincare-website\compose-homework-app> docker compose logs web
+web-1    |  * Serving Flask app 'app' (python 3.9)
+web-1    |  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+web-1    | 127.0.0.1 - - [17/Mar/2026 19:40:10] "GET / HTTP/1.1" 200 -
+
+PS C:\Users\enisa\skincare-website\compose-homework-app> docker compose logs redis
+redis-1  | 1:M 17 Mar 2026 19:40:01.123 * Ready to accept connections tcp
+redis-1  | 1:M 17 Mar 2026 19:40:05.456 * DB loaded from disk
+

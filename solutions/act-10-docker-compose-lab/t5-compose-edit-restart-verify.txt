@@ -1,0 +1,29 @@
+
+PS C:\Users\enisa\skincare-website\compose-lab> docker compose up -d
+[+] Running 2/2
+ ✔ Container compose-lab-redis-1  Started
+ ✔ Container compose-lab-web-1    Started
+
+PS C:\Users\enisa\skincare-website\compose-lab> docker compose ps
+NAME                IMAGE          STATUS    PORTS
+compose-lab-redis-1 redis:alpine   running   6379/tcp
+compose-lab-web-1   nginx:alpine   running   0.0.0.0:5000->5000/tcp
+
+PS C:\Users\enisa\skincare-website\compose-lab> curl localhost:5000
+StatusCode        : 200
+StatusDescription : OK
+Content           : <!DOCTYPE html>
+                    <html>
+                    <head>
+                    <title>Welcome to nginx!</title>
+                    ...
+
+PS C:\Users\enisa\skincare-website\compose-lab> docker compose logs
+web-1    | 127.0.0.1 - - [17/Mar/2026:19:25:01 +0000] "GET / HTTP/1.1" 200 615 "-" "Mozilla/5.0..."
+redis-1  | 1:M 17 Mar 2026 19:20:10.123 * Ready to accept connections tcp
+
+PS C:\Users\enisa\skincare-website\compose-lab> docker compose down
+[+] Running 3/3
+ ✔ Container compose-lab-web-1    Removed
+ ✔ Container compose-lab-redis-1  Removed
+ ✔ Network compose-lab_default    Removed

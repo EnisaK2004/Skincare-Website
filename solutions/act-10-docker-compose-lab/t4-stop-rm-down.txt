@@ -1,0 +1,30 @@
+PS C:\Users\enisa\skincare-website\compose-lab> docker compose stop
+[+] Stopping 2/2
+ ✔ Container compose-lab-web-1    Stopped
+ ✔ Container compose-lab-redis-1  Stopped
+
+PS C:\Users\enisa\skincare-website\compose-lab> docker compose ps
+NAME                IMAGE          STATUS        PORTS
+compose-lab-redis-1 redis:alpine   exited (0)    
+compose-lab-web-1   nginx:alpine   exited (0)    
+
+PS C:\Users\enisa\skincare-website\compose-lab> docker compose rm -f
+[+] Removing 2/2
+ ✔ Container compose-lab-web-1    Removed
+ ✔ Container compose-lab-redis-1  Removed
+
+PS C:\Users\enisa\skincare-website\compose-lab> docker compose up -d
+[+] Running 2/2
+ ✔ Container compose-lab-redis-1  Started
+ ✔ Container compose-lab-web-1    Started
+
+PS C:\Users\enisa\skincare-website\compose-lab> docker compose down
+[+] Running 2/2
+ ✔ Container compose-lab-web-1    Removed
+ ✔ Container compose-lab-redis-1  Removed
+ ✔ Network compose-lab_default    Removed
+
+NOTE:
+- STOP: Halts the running processes. The container still exists and keeps its ID and data.
+- RM: Deletes the container instances entirely. They must be stopped first.
+- DOWN: The "all-in-one" cleanup. It stops containers, removes them, and deletes the project network.

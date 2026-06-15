@@ -1,0 +1,18 @@
+PS C:\Users\enisa\skincare-website\compose-lab> docker compose logs web
+web-1  | /docker-entrypoint.sh: Configuration complete; ready for start up
+web-1  | 2026/03/17 19:15:02 [notice] 1#1: using the "epoll" event method
+web-1  | 2026/03/17 19:15:02 [notice] 1#1: nginx/1.25.x
+
+PS C:\Users\enisa\skincare-website\compose-lab> docker compose logs redis
+redis-1  | 1:C 17 Mar 2026 19:15:01.000 * Ready to accept connections tcp
+redis-1  | 1:M 17 Mar 2026 19:15:01.123 * DB loaded from disk: 0.000 seconds
+
+PS C:\Users\enisa\skincare-website\compose-lab> docker compose ps
+NAME                IMAGE          COMMAND                  SERVICE   STATUS    PORTS
+compose-lab-redis-1 redis:alpine   "docker-entrypoint.s…"   redis     running   6379/tcp
+compose-lab-web-1   nginx:alpine   "/docker-entrypoint.s…"   web       running   0.0.0.0:5000->5000/tcp
+
+NOTE:
+- NAME: The unique identifier for the container instance (Project + Service + Index).
+- STATUS: The current lifecycle state (e.g., 'running' means active, 'exited' means stopped).
+- PORTS: The mapping between the host machine and the container; '0.0.0.0:5000->5000/tcp' means traffic on your PC's port 5000 is sent to the container's port 5000.

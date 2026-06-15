@@ -1,0 +1,10 @@
+ C:\Users\enisa\skincare-website> docker compose up
+[+] Running 3/3
+ ⠿ Network skincare-website_default    Created
+ ⠿ Container skincare-website-redis-1  Started
+ ⠿ Container skincare-website-web-1    Started
+Attaching to redis-1, web-1
+redis-1  | 1:C 17 Mar 2026 18:58:02.000 * Ready to accept connections tcp
+web-1    | /docker-entrypoint.sh: Configuration complete; ready for start up
+redis-1  | 1:M 17 Mar 2026 18:58:02.123 * DB loaded from disk: 0.000 seconds
+web-1    | 2026/03/17 18:58:02 [notice] 1#1: using the "epoll" event method
