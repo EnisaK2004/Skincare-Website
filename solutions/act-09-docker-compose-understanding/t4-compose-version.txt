@@ -1,4 +1,0 @@
-PS C:\Users\enisa\skincare-website> docker compose version
-Docker Compose version v2.34.0-desktop.1
-PS C:\Users\enisa\skincare-website> docker-compose --version
-Docker Compose version v2.34.0-desktop.1
