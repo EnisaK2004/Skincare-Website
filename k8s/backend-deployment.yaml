@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+  namespace: skincare
+data:
+  DB_HOST: db
+  DB_NAME: glowcare
+  DB_USER: postgres
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: backend-secret
+  namespace: skincare
+type: Opaque
+stringData:
+  DB_PASSWORD: "Enisa123!"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: skincare
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: 233264/skincare-backend:latest
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: backend-config
+          env:
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: backend-secret
+                  key: DB_PASSWORD
